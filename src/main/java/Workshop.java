@@ -383,15 +383,41 @@ public class Workshop {
     return Integer.toHexString(numero).toUpperCase();
     }
 
-    // Método para el juego de piedra, papel, tijera, lagarto, Spock
-    public String jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
-        // TODO: Implementar el método para el juego de Piedra, Papel, Tijera, Lagarto, Spock.
-        // Las reglas del juego son:
-        // - Piedra vence a Tijera y Lagarto
-        // - Papel vence a Piedra y Spock
-        // - Tijera vence a Papel y Lagarto
-        // - Lagarto vence a Spock y Papel
-        // - Spock vence a Tijera y Piedra
+   // Método para el juego de Piedra, Papel, Tijera, Lagarto, Spock
+
+   public String jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
+
+    String[] opciones = {"Piedra", "Papel", "Tijera", "Lagarto", "Spock"};
+
+    int indice = (int) (Math.random() * opciones.length);
+    String eleccionComputadora = opciones[indice];
+
+    if (eleccionUsuario.equalsIgnoreCase(eleccionComputadora)) {
+        return "Empate. Ambos eligieron " + eleccionComputadora;
+    }
+
+    boolean ganaUsuario =
+            (eleccionUsuario.equalsIgnoreCase("Piedra") &&
+                    (eleccionComputadora.equals("Tijera") || eleccionComputadora.equals("Lagarto")))
+            ||
+            (eleccionUsuario.equalsIgnoreCase("Papel") &&
+                    (eleccionComputadora.equals("Piedra") || eleccionComputadora.equals("Spock")))
+            ||
+            (eleccionUsuario.equalsIgnoreCase("Tijera") &&
+                    (eleccionComputadora.equals("Papel") || eleccionComputadora.equals("Lagarto")))
+            ||
+            (eleccionUsuario.equalsIgnoreCase("Lagarto") &&
+                    (eleccionComputadora.equals("Spock") || eleccionComputadora.equals("Papel")))
+            ||
+            (eleccionUsuario.equalsIgnoreCase("Spock") &&
+                    (eleccionComputadora.equals("Tijera") || eleccionComputadora.equals("Piedra")));
+
+            if (ganaUsuario) {
+            return "Ganaste. Tú elegiste " + eleccionUsuario + " y la computadora eligió " + eleccionComputadora;
+           } else {
+            return "Perdiste. Tú elegiste " + eleccionUsuario + " y la computadora eligió " + eleccionComputadora;
+    }
+    }
 
 
         // El método debe retornar un mensaje indicando el resultado del juego.
