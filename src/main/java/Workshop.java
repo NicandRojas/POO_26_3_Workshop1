@@ -419,33 +419,30 @@ public class Workshop {
     }
     }
 
-
-        // El método debe retornar un mensaje indicando el resultado del juego.
-        // Ejemplo: Si la eleccionUsuario es "Piedra", el resultado podría ser "Ganaste" o "Perdiste" dependiendo de la elección de la computadora.
-        return "";
-    }
+    // El método debe retornar un mensaje indicando el resultado del juego.
 
     public String pptls2(String game[]) {
-        //Retornar player ganador o empate
-            /*
-            Rock = R
-            Paper = P
-            Scissors = S
-            Lizard = L
-            Spock = V
-        Scissors cuts Paper
-Paper covers Rock
-Rock crushes Lizard
-Lizard poisons Spock
-Spock smashes Scissors
-Scissors decapitates Lizard
-Lizard eats Paper
-Paper disproves Spock
-Spock vaporizes Rock
-Rock crushes Scissors
-         */
-        return "";
+
+    String jugador1 = game[0].toUpperCase();
+    String jugador2 = game[1].toUpperCase();
+
+    if (jugador1.equals(jugador2)) {
+        return "Empate";
     }
+
+    boolean ganaJ1 =
+            (jugador1.equals("R") && (jugador2.equals("S") || jugador2.equals("L"))) ||
+            (jugador1.equals("P") && (jugador2.equals("R") || jugador2.equals("V"))) ||
+            (jugador1.equals("S") && (jugador2.equals("P") || jugador2.equals("L"))) ||
+            (jugador1.equals("L") && (jugador2.equals("P") || jugador2.equals("V"))) ||
+            (jugador1.equals("V") && (jugador2.equals("R") || jugador2.equals("S")));
+
+    if (ganaJ1) {
+        return "Jugador 1";
+    } else {
+        return "Jugador 2";
+    }
+}
 
     public double areaCirculo(double radio) {
         return 0.0;
