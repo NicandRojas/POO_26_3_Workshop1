@@ -354,13 +354,22 @@ public class Workshop {
     return correo.matches("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$");
    }
 
-    // Método que calcula el promedio de una lista de números
+   // Método que calcula el promedio de una lista de números
 
-    public double promedioLista(List<Integer> lista) {
-        // TODO: Implementar el método para calcular el promedio de una lista de números.
-        // Ejemplo: Si lista = [1, 2, 3, 4, 5], el resultado debería ser 3.0.
+   public double promedioLista(List<Integer> lista) {
+
+    if (lista == null || lista.isEmpty()) {
         return 0.0;
     }
+
+    int suma = 0;
+
+    for (Integer numero : lista) {
+        suma += numero;
+    }
+
+    return (double) suma / lista.size();
+}
 
     // Método que convierte un número en su representación binaria
     public String convertirABinario(int numero) {
