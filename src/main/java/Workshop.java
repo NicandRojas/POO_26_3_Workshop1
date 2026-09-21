@@ -83,10 +83,10 @@ public class Workshop {
         int[] fibonacci = new int[n];
     
         if (n > 0) {
-            fibonacci[0] = 0; // Primer término
+            fibonacci[0] = 0; 
         }
         if (n > 1) {
-            fibonacci[1] = 1; // Segundo término
+            fibonacci[1] = 1; 
         }
    
         for (int i = 2; i < n; i++) {
@@ -96,11 +96,16 @@ public class Workshop {
         }
 
     // Método que suma todos los elementos de un arreglo
-    public int sumaElementos(int[] arreglo) {
-        // TODO: Implementar el método para sumar todos los elementos de un arreglo.
-        // Ejemplo: Si arreglo = [1, 2, 3, 4, 5], el resultado debería ser 15.
-        return 0;
-    }
+  
+        public int sumaElementos(int[] arreglo) {
+        int suma = 0;
+
+        for (int i = 0; i < arreglo.length; i++) {
+        suma += arreglo[i];
+        }
+
+        return suma;
+        }
 
     // Método que calcula el promedio de los elementos de un arreglo
     public double promedioElementos(int[] arreglo) {
