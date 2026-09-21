@@ -381,6 +381,7 @@ public class Workshop {
 
     public String convertirAHexadecimal(int numero) {
     return Integer.toHexString(numero).toUpperCase();
+    }
 
     // Método para el juego de piedra, papel, tijera, lagarto, Spock
     public String jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
