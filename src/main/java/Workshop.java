@@ -481,6 +481,6 @@ public class Workshop {
     } else if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) {
         return "Piscis";
     }
-
     return "Fecha inválida";
     }
+}
